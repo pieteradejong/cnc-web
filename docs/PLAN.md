@@ -12,7 +12,7 @@ Two things make this tractable now:
   `electronicarts/CnC_Red_Alert`; earlier, 2020, the Remastered DLL sources). **No assets** were
   released — code only.
 - `TheAssemblyArmada/Vanilla-Conquer` already turned that source into a clean, portable CMake +
-  SDL2 + OpenAL build of *both* games. No public WebAssembly build of it exists — that is the gap
+  SDL2 + OpenAL build of _both_ games. No public WebAssembly build of it exists — that is the gap
   this project fills.
 
 Research found no shortcut to a web-native TD/RA: `cncjs` is a partial TS reimplementation, OpenRA is
@@ -43,7 +43,7 @@ export type GameId = 'td' | 'ra';
 
 export interface GameRuntime {
   readonly id: 'js-dos' | 'vanilla-conquer';
-  available(game: GameId, store: AssetStore): Promise<boolean>;  // required files present?
+  available(game: GameId, store: AssetStore): Promise<boolean>; // required files present?
   start(host: HTMLElement, game: GameId, store: AssetStore): Promise<GameSession>;
 }
 
@@ -83,7 +83,7 @@ src/
 - `.github/workflows/ci.yml`: typecheck, lint, test, build — copy the shape used by `templates/ts-web`.
 - **Cross-origin isolation**: js-dos's worker/threaded backend needs `SharedArrayBuffer`. Set
   `server.headers` and `preview.headers` in `vite.config.ts` to `Cross-Origin-Opener-Policy:
-  same-origin` and `Cross-Origin-Embedder-Policy: require-corp` from day one, and mirror them in
+same-origin` and `Cross-Origin-Embedder-Policy: require-corp` from day one, and mirror them in
   whatever host config is used later. Getting this wrong late is a confusing class of bug.
 
 ## Phase 1 — Playable via js-dos (1–2 days)
