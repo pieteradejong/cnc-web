@@ -1,0 +1,6 @@
+# Netlify / Cloudflare Pages: js-dos needs the page to be cross-origin isolated
+# so the emulator worker can use SharedArrayBuffer.
+/*
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Resource-Policy: same-origin
