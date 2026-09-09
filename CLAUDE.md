@@ -9,7 +9,7 @@ browser using game files the user supplies themselves. Today the games run under
 compiled to WebAssembly); the intended next step is compiling the GPL game source
 ([Vanilla Conquer](https://github.com/TheAssemblyArmada/Vanilla-Conquer)) to WebAssembly and running
 that instead, behind the same interface. The staged plan lives in
-`~/.claude/plans/soft-seeking-blanket.md`.
+[`docs/PLAN.md`](docs/PLAN.md).
 
 ## Commands
 
