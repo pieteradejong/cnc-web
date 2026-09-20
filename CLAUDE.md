@@ -9,7 +9,9 @@ browser using game files the user supplies themselves. Today the games run under
 compiled to WebAssembly); the intended next step is compiling the GPL game source
 ([Vanilla Conquer](https://github.com/TheAssemblyArmada/Vanilla-Conquer)) to WebAssembly and running
 that instead, behind the same interface. The staged plan lives in
-[`docs/PLAN.md`](docs/PLAN.md).
+[`docs/PLAN.md`](docs/PLAN.md), current state and what is (and is not) verified in
+[`docs/PROGRESS.md`](docs/PROGRESS.md), and choices that closed off an alternative in
+[`DECISIONS.md`](DECISIONS.md).
 
 ## Commands
 

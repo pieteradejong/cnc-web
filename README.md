@@ -82,6 +82,12 @@ Cross-Origin-Embedder-Policy: require-corp
 `vite.config.ts` sets these for `dev` and `preview`; production hosting must set them too, or the
 emulator will fail to start.
 
+## Project docs
+
+- [`docs/PROGRESS.md`](docs/PROGRESS.md) — what is built, what is verified and how, what is open
+- [`docs/PLAN.md`](docs/PLAN.md) — the staged plan, including the phase-4 engine port
+- [`DECISIONS.md`](DECISIONS.md) — choices that closed off an alternative
+
 ## License
 
 GPL-3.0-or-later — see [LICENSE](LICENSE). This project links against
