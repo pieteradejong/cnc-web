@@ -35,3 +35,7 @@ public/js-dos/
 *.VQA
 *.jsdos
 game-data/
+
+# Secrets: .gitignore baseline (docs/policy/repo-standards.md)
+.env
+.env.*
