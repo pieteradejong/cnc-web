@@ -73,7 +73,7 @@ of every byte, for nothing).
 **Date:** 2026-10-22
 **Context:** The app had never been deployed. It needs COOP/COEP headers on every response
 (cross-origin isolation for js-dos). It is also the pilot for the workspace deploy pipeline
-(dotfiles `docs/deploy-pipeline.md`, D41).
+(dotfiles `docs/deploy-pipeline.md`, D42).
 **Decision:** Vercel project `cnc-web-padj` (https://cnc-web-padj.vercel.app; `cnc-web.vercel.app`
 belongs to an unrelated site) on the Git integration, set up by `vercel-project init`:
 `main` deploys production, previews need a Vercel login, and Deployment Checks hold production
