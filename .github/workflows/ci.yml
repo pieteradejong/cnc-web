@@ -40,5 +40,5 @@ jobs:
   live:
     uses: pieteradejong/dotfiles/.github/workflows/vercel-live-reusable.yml@main
     with:
-      site_url: https://cnc-web.vercel.app
-      project: cnc-web
+      site_url: https://cnc-web-padj.vercel.app
+      project: cnc-web-padj

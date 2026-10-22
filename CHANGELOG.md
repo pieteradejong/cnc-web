@@ -7,7 +7,7 @@ shape. History before this file: `git log`.
 
 ### Added
 
-- Deployed on Vercel (project `cnc-web`) through the workspace deploy pipeline: a push to `main`
+- Deployed on Vercel (project `cnc-web-padj`) through the workspace deploy pipeline: a push to `main`
   deploys production once `tests` and `security` pass, previews need a Vercel login, and the CI
   `live` job checks that production serves the deployed commit (DECISIONS #6).
 - `security.yml` calls the shared security workflow (gitleaks over full history plus the commit

@@ -1,5 +1,6 @@
 {
   "printWidth": 110,
   "singleQuote": true,
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "overrides": [{ "files": "portfolio.md", "options": { "singleQuote": false } }]
 }

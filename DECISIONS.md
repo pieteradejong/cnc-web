@@ -74,7 +74,8 @@ of every byte, for nothing).
 **Context:** The app had never been deployed. It needs COOP/COEP headers on every response
 (cross-origin isolation for js-dos). It is also the pilot for the workspace deploy pipeline
 (dotfiles `docs/deploy-pipeline.md`, D41).
-**Decision:** Vercel project `cnc-web` on the Git integration, set up by `vercel-project init`:
+**Decision:** Vercel project `cnc-web-padj` (https://cnc-web-padj.vercel.app; `cnc-web.vercel.app`
+belongs to an unrelated site) on the Git integration, set up by `vercel-project init`:
 `main` deploys production, previews need a Vercel login, and Deployment Checks hold production
 until `tests` (`ci.yml`) and `security / gitleaks`, `security / gate` (`security.yml`) pass.
 `vercel.json` sends the headers. `vite.config.ts` stamps `VERCEL_GIT_COMMIT_SHA` into

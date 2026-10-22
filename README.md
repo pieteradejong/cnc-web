@@ -82,7 +82,7 @@ Cross-Origin-Embedder-Policy: require-corp
 `vite.config.ts` sets these for `dev` and `preview`; production hosting must set them too, or the
 emulator will fail to start.
 
-Production is the Vercel project `cnc-web`. A push to `main` deploys once the `tests` and `security`
+Production is the Vercel project `cnc-web-padj`, at <https://cnc-web-padj.vercel.app>. A push to `main` deploys once the `tests` and `security`
 checks pass. `vercel.json` sends the headers. The setup and the checks are the workspace deploy
 pipeline (`vercel-project init` / `vercel-project check`; DECISIONS #6).
 
