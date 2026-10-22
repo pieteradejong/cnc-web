@@ -25,6 +25,8 @@ npm run typecheck    # tsc --noEmit
 npm run lint         # prettier --check .
 npm run format       # prettier --write .
 npm run sync:js-dos  # re-copy the js-dos runtime from node_modules into public/js-dos/
+./test.sh            # every check CI's `tests` job runs (--quick skips the build)
+vercel-project check # the Vercel project still has the pipeline settings (exit 1 on drift)
 ```
 
 ## Architecture
@@ -56,6 +58,8 @@ npm run sync:js-dos  # re-copy the js-dos runtime from node_modules into public/
   and loaded as a classic script. Its API is described by hand in `src/types/js-dos.ts` — check that
   file against `node_modules/js-dos` after any version bump.
 - **`erasableSyntaxOnly` is on** in `tsconfig.json`: no constructor parameter properties, no enums.
+- **Pushing `main` deploys production** (Vercel `cnc-web`, DECISIONS #6), held until `tests` and
+  `security` pass. Keep the `tests` job name: Vercel's Deployment Checks match it by name.
 - **Never commit game data.** `.gitignore` blocks `*.mix`, `*.iso`, `*.vqa` and `public/js-dos/`.
   Game files are copyrighted and large; they belong in the user's browser, not in git.
 - The repo is **GPL-3.0-or-later**, not the workspace-default MIT, because it links GPL code

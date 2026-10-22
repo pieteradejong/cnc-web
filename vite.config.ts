@@ -11,7 +11,22 @@ const crossOriginIsolation = {
   'Cross-Origin-Resource-Policy': 'same-origin',
 };
 
+/**
+ * Stamps the commit Vercel built into the page, so the CI `live` job can prove
+ * production serves the deployed commit (dotfiles docs/deploy-pipeline.md).
+ * Empty outside Vercel.
+ */
+const buildCommit = {
+  name: 'build-commit',
+  transformIndexHtml: (html: string) =>
+    html.replace(
+      '</head>',
+      `  <meta name="build-commit" content="${process.env.VERCEL_GIT_COMMIT_SHA ?? ''}" />\n  </head>`,
+    ),
+};
+
 export default defineConfig({
+  plugins: [buildCommit],
   server: { headers: crossOriginIsolation },
   preview: { headers: crossOriginIsolation },
   build: { target: 'es2022' },

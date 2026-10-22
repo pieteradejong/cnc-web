@@ -39,3 +39,6 @@ game-data/
 # Secrets: .gitignore baseline (docs/policy/repo-standards.md)
 .env
 .env.*
+
+# Vercel CLI link (vercel-project init); holds no secret but is per-machine
+.vercel

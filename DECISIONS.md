@@ -67,3 +67,23 @@ No bundle is assembled, on disk or in memory. Rejected: zipping a bundle at runt
 of every byte, for nothing).
 **Verified:** In headless Chrome, DOSBox mounted the injected filesystem as `C:` and ran
 `C:\CNC\C&C.EXE`, printing its output; the save it wrote was read back out afterwards.
+
+## 6. Host on Vercel through the workspace deploy pipeline
+
+**Date:** 2026-10-22
+**Context:** The app had never been deployed. It needs COOP/COEP headers on every response
+(cross-origin isolation for js-dos). It is also the pilot for the workspace deploy pipeline
+(dotfiles `docs/deploy-pipeline.md`, D41).
+**Decision:** Vercel project `cnc-web` on the Git integration, set up by `vercel-project init`:
+`main` deploys production, previews need a Vercel login, and Deployment Checks hold production
+until `tests` (`ci.yml`) and `security / gitleaks`, `security / gate` (`security.yml`) pass.
+`vercel.json` sends the headers. `vite.config.ts` stamps `VERCEL_GIT_COMMIT_SHA` into
+`<meta name="build-commit">`, and the `live` job checks that production serves it. CI moved to
+SHA-pinned actions and `npm ci --ignore-scripts`, with the one needed script run by name.
+Rejected: GitHub Pages (it cannot set response headers, so the emulator would never start; a
+service-worker header shim adds a moving part for no gain); building in Actions and uploading
+with `--prebuilt` (the build runs fine on Vercel, so a deploy token in GitHub buys nothing).
+**Verified:** `./test.sh` → "all green" with the new CI shape; `actionlint` passes on both
+workflows; `VERCEL_GIT_COMMIT_SHA=<sha> vite build` puts that SHA in `dist/index.html`'s
+`build-commit` meta. NOT YET: the first production deploy, the COOP/COEP headers as served, and a
+deliberately red `tests` run holding the production alias (`~/dev/TODO.md`).
