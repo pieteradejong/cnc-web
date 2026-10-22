@@ -15,6 +15,7 @@ shape. History before this file: `git log`.
 - Pages carry `<meta name="build-commit">` with the commit Vercel built.
 
 ### Changed
+
 - `NOTICE` names the copyright holder and carries the GPL notice; `LICENSE` stays the verbatim GPL-3.0 text (dotfiles D43).
 
 - CI: actions pinned by commit SHA, Node from the new `.nvmrc` (22), `npm ci --ignore-scripts`,
