@@ -86,5 +86,8 @@ service-worker header shim adds a moving part for no gain); building in Actions 
 with `--prebuilt` (the build runs fine on Vercel, so a deploy token in GitHub buys nothing).
 **Verified:** `./test.sh` → "all green" with the new CI shape; `actionlint` passes on both
 workflows; `VERCEL_GIT_COMMIT_SHA=<sha> vite build` puts that SHA in `dist/index.html`'s
-`build-commit` meta. NOT YET: the first production deploy, the COOP/COEP headers as served, and a
-deliberately red `tests` run holding the production alias (`~/dev/TODO.md`).
+`build-commit` meta. Live, 2026-10-28: `vercel-project init --name cnc-web-padj` and `check` → all
+eight ✓. The first deploy, `c2cc1bf`, is served with COOP `same-origin`, COEP `require-corp` and CORP
+`same-origin`. A deployment URL answers 302 to `vercel.com/sso-api`. A deliberately red vitest,
+`a6dd8f9`, built `● Ready`, while production kept serving `c2cc1bf`. Its revert, `886d77d`, went
+live in about 45 s with `live` green (dotfiles D42 § Verified).

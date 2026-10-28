@@ -7,6 +7,7 @@ shape. History before this file: `git log`.
 
 ### Added
 
+- Listed on the portfolio site (https://padj.vercel.app/projects/): `portfolio.md` has `public: true` and `aiGenerated: true` (an assistant wrote the description).
 - Deployed on Vercel (project `cnc-web-padj`) through the workspace deploy pipeline: a push to `main`
   deploys production once `tests` and `security` pass, previews need a Vercel login, and the CI
   `live` job checks that production serves the deployed commit (DECISIONS #6).

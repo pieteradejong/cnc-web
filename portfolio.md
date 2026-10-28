@@ -2,7 +2,8 @@
 # This repo's page on the portfolio site. `public` is the only switch: true lists it, false
 # keeps it off (the app stays hosted either way). The portfolio repo pulls this file in with
 # scripts/sync-projects.sh; the other fields follow its project schema.
-public: false
+public: true
+aiGenerated: true
 title: "Command & Conquer in the browser"
 description: "Tiberian Dawn and Red Alert in a browser tab, from game files you supply yourself, with nothing installed and no server involved"
 techStack: ["TypeScript", "Vite", "WebAssembly", "js-dos", "OPFS"]
